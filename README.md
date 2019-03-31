@@ -4,6 +4,7 @@ Easy way to take a file list of episodes and rename them by a season starting ea
 You must have php installed and runnable from commandline.
 
 Run the bat file and follow the instructions.
+Pass in the directory of a season one at a time.
 Note the directory you pass must only have the episodes you are renamin.
 
 You will be provided a preview before you approve the renaming so make sure its correct!
