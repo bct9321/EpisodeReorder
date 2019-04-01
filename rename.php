@@ -39,8 +39,8 @@ foreach($files as $fileName) {
 	echo "Parsing: $fileName\n";
 	$firstInt = my_ofset($fileName, "0123456789");
 	$lastInt = $firstInt+$epLength;
-	echo "first int: $firstInt\n";
-	echo "last int: $lastInt\n";
+	//echo "first int: $firstInt\n";
+	//echo "last int: $lastInt\n";
 	
 	$strBeforeFirstInt = substr($fileName, 0, $firstInt);
 	$strAfterFirstInt = substr($fileName, $lastInt);
