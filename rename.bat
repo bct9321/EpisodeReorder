@@ -18,8 +18,12 @@ if "%filePath%"=="" goto setfilepath
 set /p season="Enter Season Number: "
 if '%season%'=='' goto setseason
 
+:setepisodelength
+set /p epLength="Enter Length of Episode Numbering: "
+if "%epLength%"=="" goto setepisodelength
+
 :renameScript
-php rename.php "%filePath%" %season% %executeRename%
+php rename.php "%filePath%" %season% %executeRename% %epLength%
 
 :executerename
 if '%executeRename%'=='true' (
