@@ -6,6 +6,8 @@ if(!isset($argv[1])){
 	die("Must provide Season\n");
 } else if(!isset($argv[3]) || $argv[3] === "false") {
 	echo "Previewing Filename changes\n";
+} else if(!isset($argv[4])){
+	die("Must provide Original Episode Numbering Length\n");
 } else if($argv[3] === "true") {
 	$commitRename = true;
 	echo "Renaming Files...\n";
@@ -13,6 +15,7 @@ if(!isset($argv[1])){
 
 $season = str_pad($argv[2], 2, '0', STR_PAD_LEFT);
 $filePath = $argv[1];
+$epLength = $argv[4];
 echo "Renaming Season $season\n";
 
 
@@ -35,10 +38,12 @@ foreach($files as $fileName) {
 	
 	echo "Parsing: $fileName\n";
 	$firstInt = my_ofset($fileName, "0123456789");
+	$lastInt = $firstInt+$epLength;
 	//echo "first int: $firstInt\n";
+	//echo "last int: $lastInt\n";
 	
 	$strBeforeFirstInt = substr($fileName, 0, $firstInt);
-	$strAfterFirstInt = substr($fileName, $firstInt);
+	$strAfterFirstInt = substr($fileName, $lastInt);
 	$spaceAfterInt = strpos($strAfterFirstInt, ' ');
 	//echo "spaceAfterInt: $spaceAfterInt\n";
 	$episode = substr($strAfterFirstInt, 0, $spaceAfterInt);
