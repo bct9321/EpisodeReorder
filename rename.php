@@ -51,7 +51,7 @@ foreach($files as $fileName) {
 	
 	$strAfterEp = substr($strAfterFirstInt, $spaceAfterInt);
 	
-	$newName = $strBeforeFirstInt . "S" . $season . "E" . str_pad($episodeNumber, 3, '0', STR_PAD_LEFT) . $strAfterEp;
+	$newName = $strBeforeFirstInt . "S" . $season . "E" . str_pad($episodeNumber, $epLength, '0', STR_PAD_LEFT) . $strAfterEp;
 	
 	
 	if ($commitRename === true) {
